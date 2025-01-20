@@ -1,0 +1,16 @@
+UNF
+staffNo, dentistName, patientNo, patientName, appointmentDate, appointmenttime, surgeryNo
+1NF
+StaffNo,dentistName,*patientNo*,patientName, *appointmentDate*, apopointmenttime, SurgeryNo
+ervan uitgaande dat een patient niet 2keer op een dag zal komen weet je door de combinatie van PatientNo en appointmentDate welke surgery en welke dentist de operatie heeft gedaan
+
+2NF: No partial dependencies
+
+StaffNo,dentistName,*patientNo*, *appointmentDate*, apopointmenttime, SurgeryNo 
+*PatientNo*, PatientName
+
+3NF: no transitive dependencies
+
+*StaffNo*,StaffName
+StaffNo,*patientNo*, *appointmentDate*, apopointmenttime, SurgeryNo 
+*PatientNo*, PatientName
