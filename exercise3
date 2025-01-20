@@ -1,0 +1,28 @@
+1NF
+*PatientNo*, FUllName, *WardNo*, WardName, *DrugNo*, DrugName, DrugDescription, Dosage, Method of admin, UnitsPerDay, *StartDay*, FinishDay
+
+2NF: no partial dependencies
+Patient(*PatientNo*,Fullname)
+general(*PatientNo*, *WardNo*, *DrugNo*, *StartDay*)
+Units_finish(*PatientNo*, *DrugNo*,*StartDay*,finishday,units per day)
+ward(*WardNo*, WardName)
+drug(*DrugNo*, DrugName, DrugDescription, Dosage, Method of admin)
+
+2NF reorganized
+Patient(*PatientNo*,Fullname)
+general(*PatientNo*, *WardNo*)
+Units_finish(*PatientNo*, *DrugNo*,*StartDay*,finishday,units per day)
+ward(*WardNo*, WardName)
+drug(*DrugNo*, DrugName, DrugDescription, Dosage, Method of admin)
+
+3NF: no transitive dependencies
+Patient(*PatientNo*,Fullname)
+general(*PatientNo*, *WardNo*)
+Units_finish(*PatientNo*, *DrugNo*,*StartDay*,finishday,units per day)
+ward(*WardNo*, WardName)
+drug(*DrugNo*, DrugName)
+drugDescription(*DrugName*,DrugDescription)
+DrugDosage(*Drugname*,Dosage)
+Method(*DrugName*, Method of admin)
+
+
