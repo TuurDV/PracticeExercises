@@ -6,3 +6,4 @@ git commit -m "Added exercise 1"
 git remote add origin git@github.com:TuurDV/PracticeExercises.git
 git branch -M main
 git push -u origin main
+hello
